@@ -1,11 +1,14 @@
 package launcher;
 
-import controlador.Controlador;
+import Vista.Sala;
 
 public class Launcher {
-	static Controlador nombre;
 
-	public static void Main(String[] args) {
-		nombre = new Controlador();
+	static Sala vist_P;
+
+	public static void main(String[] args) {
+
+		vist_P = new Sala();
+
 	}
 }
