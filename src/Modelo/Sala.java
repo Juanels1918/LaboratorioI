@@ -33,17 +33,4 @@ public class Sala {
             System.out.println();
         }
     }
-
-    String frase_2 = "pinche u";
-
-    //sotzio
-
-    //hola
-    //Hola perro
-    String frase = "Git jujuemadre";
-
-    String frase_3 = "lolsito";
-    
-    String frase_d = "lolsito";
-    String frase_a = "lolsito";
 }
