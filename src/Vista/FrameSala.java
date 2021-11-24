@@ -19,13 +19,13 @@ public class FrameSala extends JFrame {
     public FrameSala (){
     	panel1 = new JPanel(); 
     	panel1.setBackground(new Color(102, 205, 170));
+    	setContentPane(panel1);
         setSize(567, 360);
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("El mejor cine do mundhino :3");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setVisible(true);
-        setContentPane(panel1);
+        
         panel1.setLayout(null);
         
         panel1.add(avanzarHora());
@@ -46,8 +46,9 @@ public class FrameSala extends JFrame {
 		LImagen.setIcon(foto);
 		LImagen.setBounds(0, 0, 394, 83);
 		panel1.add(LImagen);
-
         panel1.add(table());
+        
+        this.setVisible(true);
     }
     
     public JTextField campo() {
