@@ -14,7 +14,6 @@ public class FrameSala extends JFrame {
 	
 	static JPanel panel1;
     static DefaultTableModel modelo;
-    private static JTable table;
     static JTextField campo;
 
     public FrameSala (){
@@ -97,7 +96,7 @@ public class FrameSala extends JFrame {
 		return peliculas;
 	}
     public JTable table() {
-    	 table = new JTable();
+        JTable table = new JTable();
          table.setColumnSelectionAllowed(true);
          table.setCellSelectionEnabled(true);
          table.setBounds(203, 153, 299, 160);
