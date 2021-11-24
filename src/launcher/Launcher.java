@@ -1,14 +1,14 @@
 package launcher;
 
-import Vista.Sala;
+import Vista.FrameSala;
 
 public class Launcher {
 
-	static Sala vist_P;
+	static FrameSala vist_P;
 
 	public static void main(String[] args) {
 
-		vist_P = new Sala();
+		vist_P = new FrameSala();
 
 	}
 }
