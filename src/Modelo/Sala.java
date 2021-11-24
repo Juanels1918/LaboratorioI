@@ -35,5 +35,7 @@ public class Sala {
     }
 
     //hola
-
+    //Hola perro
+    String frase = "Git jujuemadre";
+    
 }
