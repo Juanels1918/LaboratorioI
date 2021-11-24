@@ -39,16 +39,16 @@ public class FrameSala extends JFrame {
         panel1.add(campo());
         panel1.add(hora());
         
-        /*JLabel LImagen = new JLabel();
+        JLabel LImagen = new JLabel();
 		ImageIcon foto = new ImageIcon(this.getClass().getResource("/imagenes/baner.jpg"));
 			Image imagen = foto.getImage() ;
 			Image imagen2 = imagen.getScaledInstance(394, 83, Image.SCALE_SMOOTH);
 		foto = new ImageIcon(imagen2);
 		LImagen.setIcon(foto);
 		LImagen.setBounds(0, 0, 394, 83);
-		panel1.add(LImagen);*/
+		panel1.add(LImagen);
 
-        //panel1.add(table());
+        panel1.add(table());
     }
     
     public JTextField campo() {
