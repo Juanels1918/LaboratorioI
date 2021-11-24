@@ -43,4 +43,7 @@ public class Sala {
     String frase = "Git jujuemadre";
 
     String frase_3 = "lolsito";
+    
+    String frase_d = "lolsito";
+    String frase_a = "lolsito";
 }
