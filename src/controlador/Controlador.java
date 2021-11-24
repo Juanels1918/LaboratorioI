@@ -6,7 +6,5 @@ package controlador;
  * */
 public class Controlador {
 
-	public static void Main(String args[]) {
-		
-	}
+	
 }
