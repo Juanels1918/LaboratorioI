@@ -1,7 +1,11 @@
 package launcher;
 
+import controlador.Controlador;
+
 public class Launcher {
-	public static void Main(String args[]) {
-			
+	static Controlador nombre;
+
+	public static void Main(String[] args) {
+		nombre = new Controlador();
 	}
 }
