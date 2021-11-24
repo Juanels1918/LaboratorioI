@@ -13,10 +13,10 @@ public class Sala {
         for (int i = 0; i < 4; i++) {
             for (int j = 0 ; j < 4; j++){
                 switch (j) {
-                    case 0: asientos.add(aux, (i + 1) + "D"); break;
-                    case 1: asientos.add(aux, (i + 1) + "C"); break;
-                    case 2: asientos.add(aux, (i + 1) + "B"); break;
-                    case 3: asientos.add(aux, (i + 1) + "A"); break;
+                    case 0 -> asientos.add(aux, (i + 1) + "D");
+                    case 1 -> asientos.add(aux, (i + 1) + "C");
+                    case 2 -> asientos.add(aux, (i + 1) + "B");
+                    case 3 -> asientos.add(aux, (i + 1) + "A");
                 }
                 aux++;
             }
@@ -34,8 +34,14 @@ public class Sala {
         }
     }
 
+    String frase_2 = "pinche u";
+
+    //sotzio
+
     //hola
     //Hola perro
     String frase = "Git jujuemadre";
+
+
     
 }
