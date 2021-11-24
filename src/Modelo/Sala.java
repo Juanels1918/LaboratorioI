@@ -42,6 +42,5 @@ public class Sala {
     //Hola perro
     String frase = "Git jujuemadre";
 
-
-    
+    String frase_3 = "lolsito";
 }
