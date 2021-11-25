@@ -12,6 +12,7 @@ import java.awt.Font;
 import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class FrameCompra extends JFrame {
 
@@ -41,66 +42,69 @@ public class FrameCompra extends JFrame {
 	 * Create the frame.
 	 */
 	public FrameCompra() {
+		setTitle("Comprar boleto");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 389, 475);
+		setBounds(100, 100, 350, 402);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(72, 209, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblPelicula = new JLabel("Pelicula:");
 		lblPelicula.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPelicula.setBounds(51, 28, 95, 22);
+		lblPelicula.setBounds(10, 27, 95, 22);
 		contentPane.add(lblPelicula);
 		
-		JComboBox comboBoxPeliculas = new JComboBox();
-		comboBoxPeliculas.setEditable(true);
-		comboBoxPeliculas.setBounds(156, 28, 140, 26);
+		JTextField comboBoxPeliculas = new JTextField();
+		comboBoxPeliculas.setEditable(false);
+		comboBoxPeliculas.setBounds(115, 23, 211, 26);
 		contentPane.add(comboBoxPeliculas);
 		
 		JLabel lblPrecio = new JLabel("Precio:");
 		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPrecio.setBounds(51, 97, 85, 22);
+		lblPrecio.setBounds(10, 92, 95, 22);
 		contentPane.add(lblPrecio);
 		
 		textFieldPrecio = new JTextField();
-		textFieldPrecio.setBounds(156, 97, 140, 22);
+		textFieldPrecio.setEditable(false);
+		textFieldPrecio.setBounds(115, 92, 211, 22);
 		contentPane.add(textFieldPrecio);
 		textFieldPrecio.setColumns(10);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombre.setBounds(51, 177, 114, 25);
+		lblNombre.setBounds(10, 172, 95, 25);
 		contentPane.add(lblNombre);
 		
 		JLabel lblEdad = new JLabel("Edad:");
 		lblEdad.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblEdad.setBounds(51, 227, 82, 25);
+		lblEdad.setBounds(10, 222, 95, 25);
 		contentPane.add(lblEdad);
 		
 		JLabel lblDinero = new JLabel("Dinero:");
 		lblDinero.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDinero.setBounds(51, 277, 82, 25);
+		lblDinero.setBounds(10, 272, 95, 25);
 		contentPane.add(lblDinero);
 		
 		textFieldNombre = new JTextField();
-		textFieldNombre.setBounds(156, 177, 140, 25);
+		textFieldNombre.setBounds(115, 172, 211, 25);
 		contentPane.add(textFieldNombre);
 		textFieldNombre.setColumns(10);
 		
 		textFieldEdad = new JTextField();
 		textFieldEdad.setColumns(10);
-		textFieldEdad.setBounds(156, 227, 140, 25);
+		textFieldEdad.setBounds(115, 222, 211, 25);
 		contentPane.add(textFieldEdad);
 		
 		textFieldDinero = new JTextField();
 		textFieldDinero.setColumns(10);
-		textFieldDinero.setBounds(156, 277, 140, 25);
+		textFieldDinero.setBounds(115, 272, 211, 25);
 		contentPane.add(textFieldDinero);
 		
 		JButton btnComprar = new JButton("Comprar");
 		btnComprar.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnComprar.setBounds(137, 355, 136, 40);
+		btnComprar.setBounds(105, 314, 136, 40);
 		contentPane.add(btnComprar);
 	}
 }

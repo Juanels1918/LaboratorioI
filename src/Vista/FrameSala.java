@@ -9,18 +9,22 @@ import java.awt.Image;
 
 import javax.swing.border.LineBorder;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FrameSala extends JFrame {
 	
 	static JPanel panel1;
     static DefaultTableModel modelo;
-    static JTextField campo;
+    static JTextField tfdPelicula;
+    private JTextField tfdSiguiente;
+    private JTextField Pantalla;
 
     public FrameSala (){
     	panel1 = new JPanel(); 
     	panel1.setBackground(new Color(102, 205, 170));
     	setContentPane(panel1);
-        setSize(567, 360);
+        setSize(432, 360);
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("El mejor cine do mundhino :3");
@@ -41,66 +45,95 @@ public class FrameSala extends JFrame {
         JLabel LImagen = new JLabel();
 		ImageIcon foto = new ImageIcon(this.getClass().getResource("/imagenes/baner.jpg"));
 			Image imagen = foto.getImage() ;
-			Image imagen2 = imagen.getScaledInstance(394, 83, Image.SCALE_SMOOTH);
+			Image imagen2 = imagen.getScaledInstance(428, 83, Image.SCALE_SMOOTH);
 		foto = new ImageIcon(imagen2);
 		LImagen.setIcon(foto);
-		LImagen.setBounds(0, 0, 394, 83);
+		LImagen.setBounds(0, 0, 428, 83);
 		panel1.add(LImagen);
         panel1.add(table());
+        
+        tfdSiguiente = new JTextField();
+        tfdSiguiente.setBounds(170, 120, 235, 20);
+        panel1.add(tfdSiguiente);
+        tfdSiguiente.setColumns(10);
+        {
+        	Pantalla = new JTextField();
+        	Pantalla.setEditable(false);
+        	Pantalla.setHorizontalAlignment(SwingConstants.CENTER);
+        	Pantalla.setText("Pantalla");
+        	Pantalla.setBounds(195, 282, 199, 20);
+        	panel1.add(Pantalla);
+        	Pantalla.setColumns(10);
+        }
         
         this.setVisible(true);
     }
     
     public JTextField campo() {
-    	campo = new JTextField();
-    	campo.setEditable(false);
-    	campo.setBounds(20, 122, 123, 20);
-         campo.setColumns(10);
-         return campo;
+    	tfdPelicula = new JTextField();
+    	tfdPelicula.setEditable(false);
+    	tfdPelicula.setBounds(170, 93, 235, 20);
+         tfdPelicula.setColumns(10);
+         return tfdPelicula;
 	}
     
     public JLabel hora() {
     	JLabel hora = new JLabel("11:40");
     	hora.setHorizontalAlignment(SwingConstants.CENTER);
     	hora.setFont(new Font("Consolas", Font.BOLD, 40));
-    	hora.setBounds(391, 0, 172, 83);
+    	hora.setBounds(206, 166, 172, 47);
     	return hora;
 	}
     
     public JLabel sgtPel() {
     	 JLabel sgtPel = new JLabel("Siguiente pelicula: ");
          sgtPel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-         sgtPel.setBounds(20, 104, 140, 14);
+         sgtPel.setBounds(20, 121, 140, 19);
         return sgtPel;
 	}
     
     public JLabel pel_Edad() {
-    	JLabel pel_Edad = new JLabel("Pelicula + Edad ");
+    	JLabel pel_Edad = new JLabel("Pelicula Actual:");
         pel_Edad.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        pel_Edad.setBounds(308, 109, 199, 14);
+        pel_Edad.setBounds(20, 94, 199, 16);
         return pel_Edad;
 	}
     
     public JButton avanzarHora() {
-    	JButton avanzarHora = new JButton("Avanzar hora");
-        avanzarHora.setBounds(20, 153, 147, 33);
-        return avanzarHora;
+    	JButton btnavanzarHora = new JButton("Avanzar hora");
+        btnavanzarHora.setBounds(20, 188, 147, 33);
+        return btnavanzarHora;
 	}
 	public JButton compBoletas() {
-		JButton compBoletas = new JButton("Comprar boletas");
-		compBoletas.setBounds(20, 197, 147, 33);
-		return compBoletas;
+		JButton btncompBoletas = new JButton("Comprar boletas");
+		btncompBoletas.setBounds(20, 232, 147, 33);
+		return btncompBoletas;
 		}
 	public JButton peliculas() {
-		JButton peliculas = new JButton("Pelicula");
-		peliculas.setBounds(20, 241, 147, 33);
-		return peliculas;
+		JButton btnpeliculas = new JButton("Peliculas");
+		btnpeliculas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnpeliculas.setBounds(20, 276, 147, 33);
+		return btnpeliculas;
 	}
     public JTable table() {
         JTable table = new JTable();
+        table.setModel(new DefaultTableModel(
+        	new Object[][] {
+        		{null, null, null, null},
+        		{null, null, null, null},
+        		{null, null, null, null},
+        		{null, null, null, null},
+        	},
+        	new String[] {
+        		"New column", "New column", "New column", "New column"
+        	}
+        ));
          table.setColumnSelectionAllowed(true);
          table.setCellSelectionEnabled(true);
-         table.setBounds(203, 153, 299, 160);
+         table.setBounds(195, 215, 199, 64);
          return table;
 	}
     
