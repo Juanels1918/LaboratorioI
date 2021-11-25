@@ -13,7 +13,7 @@ public class Launcher {
 		vist_P = new FrameSala(); //Se crea al frame, Sala
 
 		Sala sala1 = new Sala(); //Se crea al modelo, sala
-		//sala1.comprarBoleta();
+		sala1.comprarBoleta();
 		
 		ControladorSala  ctrl = new ControladorSala(vist_P, sala1);
 

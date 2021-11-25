@@ -1,6 +1,5 @@
 package Modelo;
 
-import Modelo.Boleto;
 import java.util.ArrayList;
 
 public class Sala {
@@ -53,6 +52,26 @@ public class Sala {
         peliculas.add(0, P = new Pelicula("Spider-Man 2", "Sam Raimi", 7, 127, 10000));
         peliculas.add(1, P = new Pelicula("Baby Driver", "Edgar Wright", 16, 115, 10000));
         peliculas.add(2, P = new Pelicula("Parasite", "Bong Joon-ho", 16, 132, 10000));
+    }
+
+    public String mostrarNombrePeli (int index){
+        return peliculas.get(index).getNombre();
+    }
+
+    public String mostrarDirector (int index){
+        return peliculas.get(index).getDirector();
+    }
+
+    public int mostrarEdadMin (int index){
+        return peliculas.get(index).getEdadMin();
+    }
+
+    public int mostrarDuracion (int index){
+        return peliculas.get(index).getDuracion();
+    }
+
+    public double mostrarPrecio (int index){
+        return peliculas.get(index).getPrecio();
     }
 
     //Avanza la hora de la sala
