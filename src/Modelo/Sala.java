@@ -8,7 +8,7 @@ public class Sala {
     //Atributos
     private ArrayList<String> asientos = new ArrayList<>();
     private ArrayList<Pelicula> peliculas = new ArrayList<>();
-    private int hora;
+    private int hora = 11;
 
     Pelicula P;
 
@@ -67,4 +67,25 @@ public class Sala {
         idBoleta++;
         B.mostrar();
     }
+
+    // --- -- -- -- Getters & Setters
+    
+	public int getHora() {
+		return hora;
+	}
+
+	public void setHora(int hora) {
+		this.hora += hora;
+	}
+
+	public ArrayList<String> getAsientos() {
+		return asientos;
+	}
+
+	public void setAsientos(ArrayList<String> asientos) {
+		this.asientos = asientos;
+	}
+	
+	
+    
 }

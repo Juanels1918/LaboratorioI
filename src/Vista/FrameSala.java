@@ -1,9 +1,10 @@
 package Vista;
 
 import javax.swing.*;
+
 import javax.swing.table.DefaultTableModel;
 
-import controlador.Controlador;
+import controlador.ControladorSala;
 import java.awt.Color;
 import java.awt.Image;
 
@@ -15,12 +16,19 @@ import java.awt.event.ActionEvent;
 public class FrameSala extends JFrame {
 	
 	static JPanel panel1;
-    static DefaultTableModel modelo;
     static JTextField tfdPelicula;
     private JTextField tfdSiguiente;
     private JTextField Pantalla;
-
-    public FrameSala (){
+    
+    //Botones
+    public JButton btnavanzarHora;
+    public JButton btncompBoletas;
+    public JButton btnpeliculas;
+    
+    static private JLabel hora;
+    public JTable table;
+    
+   public FrameSala (){
     	panel1 = new JPanel(); 
     	panel1.setBackground(new Color(102, 205, 170));
     	setContentPane(panel1);
@@ -31,7 +39,7 @@ public class FrameSala extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         panel1.setLayout(null);
-        
+        //Botones 
         panel1.add(avanzarHora());
         panel1.add(compBoletas());
         panel1.add(peliculas());
@@ -77,13 +85,19 @@ public class FrameSala extends JFrame {
          return tfdPelicula;
 	}
     
+ // -- -- -- JLABEL  
+    
     public JLabel hora() {
-    	JLabel hora = new JLabel("11:40");
+    	hora = new JLabel("11:00");
     	hora.setHorizontalAlignment(SwingConstants.CENTER);
     	hora.setFont(new Font("Consolas", Font.BOLD, 40));
     	hora.setBounds(206, 166, 172, 47);
     	return hora;
 	}
+    
+		    public void setHora(int h) {
+		    	hora.setText(h+":00");
+			}
     
     public JLabel sgtPel() {
     	 JLabel sgtPel = new JLabel("Siguiente pelicula: ");
@@ -98,54 +112,35 @@ public class FrameSala extends JFrame {
         pel_Edad.setBounds(20, 94, 199, 16);
         return pel_Edad;
 	}
+   
+ // -- -- -- JBUTTON   
     
     public JButton avanzarHora() {
-    	JButton btnavanzarHora = new JButton("Avanzar hora");
+    	btnavanzarHora = new JButton("Avanzar hora");
         btnavanzarHora.setBounds(20, 188, 147, 33);
         return btnavanzarHora;
 	}
+    
+    
 	public JButton compBoletas() {
-		JButton btncompBoletas = new JButton("Comprar boletas");
+		btncompBoletas = new JButton("Comprar boletas");
 		btncompBoletas.setBounds(20, 232, 147, 33);
 		return btncompBoletas;
 		}
 	public JButton peliculas() {
-		JButton btnpeliculas = new JButton("Peliculas");
-		btnpeliculas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnpeliculas = new JButton("Peliculas");
 		btnpeliculas.setBounds(20, 276, 147, 33);
 		return btnpeliculas;
 	}
+
+	// -- -- -- JTABLE  
+	
     public JTable table() {
-        JTable table = new JTable();
-        table.setModel(new DefaultTableModel(
-        	new Object[][] {
-        		{null, null, null, null},
-        		{null, null, null, null},
-        		{null, null, null, null},
-        		{null, null, null, null},
-        	},
-        	new String[] {
-        		"New column", "New column", "New column", "New column"
-        	}
-        ));
+        table = new JTable();
          table.setColumnSelectionAllowed(true);
          table.setCellSelectionEnabled(true);
          table.setBounds(195, 215, 199, 64);
          return table;
 	}
     
-    public static DefaultTableModel tabla(){
-		modelo = new DefaultTableModel();
-		//int[][] n = Controlador.getArrayNumeros();
-        for(int i=0; i<4; i++) { modelo.addColumn(i);}
-        for(int i=0; i<4; i++) { 
-        	//String[] tit = {aCadena(n[i][0]),aCadena(n[i][1]),aCadena(n[i][2]),aCadena(n[i][3]),aCadena(n[i][4]),aCadena(n[i][5]),aCadena(n[i][6]),aCadena(n[i][7]),aCadena(n[i][8]),};
-     	//modelo.addRow(i);
-     	}
-        return modelo;
-        
-    }
 }
