@@ -24,6 +24,7 @@ public class FrameCompra extends JFrame {
 	private JTextField textFieldNombre;
 	private JTextField textFieldEdad;
 	private JTextField textFieldDinero;
+	public JButton btnComprar;
 
 	/**
 	 * Launch the application.
@@ -110,19 +111,66 @@ public class FrameCompra extends JFrame {
 		textFieldDinero.setBounds(115, 272, 211, 25);
 		contentPane.add(textFieldDinero);
 		
-		JButton btnComprar = new JButton("Comprar");
-		btnComprar.addActionListener((ActionListener) new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				//toma los datos del boleto
-				
-				//muestra el boleto
-				FrameBoleto frame = new FrameBoleto(2, 10000, "betman", "laura", "1A");
-				frame.setVisible(true);
-			}
-		});
+		
+	}
+	//botón comprar
+	public JButton comprar()
+	{
+		btnComprar = new JButton("Comprar");
 		btnComprar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnComprar.setBounds(105, 314, 136, 40);
 		contentPane.add(btnComprar);
+		return btnComprar;
 	}
+
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+
+	public void setContentPane(JPanel contentPane) {
+		this.contentPane = contentPane;
+	}
+
+	public JTextField getTextFieldPrecio() {
+		return textFieldPrecio;
+	}
+
+	public void setTextFieldPrecio(JTextField textFieldPrecio) {
+		this.textFieldPrecio = textFieldPrecio;
+	}
+
+	public JTextField getTextFieldNombre() {
+		return textFieldNombre;
+	}
+
+	public void setTextFieldNombre(JTextField textFieldNombre) {
+		this.textFieldNombre = textFieldNombre;
+	}
+
+	public JTextField getTextFieldEdad() {
+		return textFieldEdad;
+	}
+
+	public void setTextFieldEdad(JTextField textFieldEdad) {
+		this.textFieldEdad = textFieldEdad;
+	}
+
+	public JTextField getTextFieldDinero() {
+		return textFieldDinero;
+	}
+
+	public void setTextFieldDinero(JTextField textFieldDinero) {
+		this.textFieldDinero = textFieldDinero;
+	}
+
+	public JButton getBtnComprar() {
+		return btnComprar;
+	}
+
+	public void setBtnComprar(JButton btnComprar) {
+		this.btnComprar = btnComprar;
+	}
+	
+	//getters and setters
+	
 }

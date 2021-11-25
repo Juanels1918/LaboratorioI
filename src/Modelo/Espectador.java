@@ -8,14 +8,12 @@ public class Espectador {
     private String nombre;
     private int edad;
     private int dinero;
-    Boleto b; 
     
-    public Espectador(String nombre, int edad, int dinero, Boleto b)
+    public Espectador(String nombre, int edad, int dinero)
     {
     	this.nombre = nombre;
     	this.edad = edad;
     	this.dinero = dinero;
-    	this.b = b;
     }
 
 	public String getNombre() {
@@ -42,12 +40,5 @@ public class Espectador {
 		this.dinero = dinero;
 	}
 
-	public Boleto getB() {
-		return b;
-	}
-
-	public void setB(Boleto b) {
-		this.b = b;
-	}
 
 }

@@ -7,6 +7,7 @@ public class Boleto {
     private int precio;
     private String nombrePelicula;
     private String asiento;
+    private Espectador espectador;
 
     public Boleto(int id, String nombre, String x){
         this.id = id;
@@ -19,4 +20,37 @@ public class Boleto {
         System.out.println(this.id + " " + this.precio + " " + this.nombrePelicula + " " + this.asiento);
     }
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+
+	public String getNombrePelicula() {
+		return nombrePelicula;
+	}
+
+	public void setNombrePelicula(String nombrePelicula) {
+		this.nombrePelicula = nombrePelicula;
+	}
+
+	public String getAsiento() {
+		return asiento;
+	}
+
+	public void setAsiento(String asiento) {
+		this.asiento = asiento;
+	}
+    
+    
 }
