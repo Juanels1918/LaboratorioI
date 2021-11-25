@@ -2,13 +2,10 @@ package Vista;
 
 import Modelo.Sala;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.Font;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -67,7 +64,6 @@ public class FramePelicula extends JFrame {
 		
 		lblImagen = new JLabel("Imagen");
 		lblImagen.setBounds(10, 52, 211, 211);
-		contentPane.add(lblImagen);
 
 		lblTitulo = new JLabel("Titulo");
 		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 18));
