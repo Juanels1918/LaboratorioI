@@ -95,13 +95,14 @@ public class Sala {
 		return hora;
 	}
 
-	public void setHora(int hora) {
+	public void setHora(int hora)
+	{
 		if (this.hora<22) {
 			this.hora += hora;
 		}else {
 			this.hora=11;
 		}
-		
+		System.out.println("asas");
 	}
 
 	public ArrayList<String> getAsientos() {

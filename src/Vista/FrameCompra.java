@@ -23,6 +23,8 @@ public class FrameCompra extends JFrame {
 	private JTextField textFieldDinero;
 	public JButton btnComprar;
 	
+	
+	
 
 	/**
 	 * Create the frame.
@@ -102,11 +104,15 @@ public class FrameCompra extends JFrame {
 		btnComprar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnComprar.setBounds(105, 314, 136, 40);
 		
+		System.out.println("asas");
+		
 		return btnComprar;
 	}
 
 	public JTextField getTextFieldPrecio() {
 		return textFieldPrecio;
+		
+		
 	}
 
 	public JTextField getTextFieldNombre() {

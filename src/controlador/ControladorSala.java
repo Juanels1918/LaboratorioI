@@ -41,7 +41,7 @@ public class ControladorSala implements ActionListener{
 			model.setHora(2);
 			model.setPeliculaActual((int) Math.floor(Math.random()*(3 - 1 + 1) + 0));
 			Frame.setHora(model.getHora());
-			
+			System.out.println("asas");
 		}
 		if(boton.getText().equals("Comprar boletas")) {
 			System.out.println("Comprar boletas");

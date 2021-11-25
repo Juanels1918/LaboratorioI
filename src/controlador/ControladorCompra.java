@@ -34,7 +34,7 @@ public class ControladorCompra implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("asas");
 		//verifica que el comprador tenga edad y dinero suficiente para comprar la boleta
 		int edad = Integer.parseInt(frameCompra.getTextFieldEdad().getText());
 		int dinero = Integer.parseInt(frameCompra.getTextFieldDinero().getText());
