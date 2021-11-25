@@ -9,6 +9,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
@@ -29,7 +32,7 @@ public class FrameCompra extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FrameCompra frame = new FrameCompra();
+					FrameCompra frame = new FrameCompra("batman", 10000);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +44,7 @@ public class FrameCompra extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FrameCompra() {
+	public FrameCompra(String pelicula, int precio ){
 		setTitle("Comprar boleto");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 350, 402);
@@ -57,6 +60,7 @@ public class FrameCompra extends JFrame {
 		contentPane.add(lblPelicula);
 		
 		JTextField comboBoxPeliculas = new JTextField();
+		comboBoxPeliculas.setText(pelicula);
 		comboBoxPeliculas.setEditable(false);
 		comboBoxPeliculas.setBounds(115, 23, 211, 26);
 		contentPane.add(comboBoxPeliculas);
@@ -67,6 +71,7 @@ public class FrameCompra extends JFrame {
 		contentPane.add(lblPrecio);
 		
 		textFieldPrecio = new JTextField();
+		textFieldPrecio.setText("" + precio);
 		textFieldPrecio.setEditable(false);
 		textFieldPrecio.setBounds(115, 92, 211, 22);
 		contentPane.add(textFieldPrecio);
@@ -88,21 +93,34 @@ public class FrameCompra extends JFrame {
 		contentPane.add(lblDinero);
 		
 		textFieldNombre = new JTextField();
+		textFieldNombre.setText("nombre");
 		textFieldNombre.setBounds(115, 172, 211, 25);
 		contentPane.add(textFieldNombre);
 		textFieldNombre.setColumns(10);
 		
 		textFieldEdad = new JTextField();
+		textFieldEdad.setText("edad");
 		textFieldEdad.setColumns(10);
 		textFieldEdad.setBounds(115, 222, 211, 25);
 		contentPane.add(textFieldEdad);
 		
 		textFieldDinero = new JTextField();
+		textFieldDinero.setText("43343443");
 		textFieldDinero.setColumns(10);
 		textFieldDinero.setBounds(115, 272, 211, 25);
 		contentPane.add(textFieldDinero);
 		
 		JButton btnComprar = new JButton("Comprar");
+		btnComprar.addActionListener((ActionListener) new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				//toma los datos del boleto
+				
+				//muestra el boleto
+				FrameBoleto frame = new FrameBoleto(2, 10000, "betman", "laura", "1A");
+				frame.setVisible(true);
+			}
+		});
 		btnComprar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnComprar.setBounds(105, 314, 136, 40);
 		contentPane.add(btnComprar);
