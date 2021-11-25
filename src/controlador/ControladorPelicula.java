@@ -13,6 +13,7 @@ public class ControladorPelicula implements ActionListener {
 
     private FramePelicula vista;
     private Sala objSala;
+    
 
     public ControladorPelicula (FramePelicula vista, Sala objSala){
         this.vista = vista;

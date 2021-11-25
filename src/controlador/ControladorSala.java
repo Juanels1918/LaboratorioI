@@ -8,14 +8,18 @@ import java.util.Iterator;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
+import Modelo.Pelicula;
 import Modelo.Sala;
+import Vista.FrameCompra;
+import Vista.FramePelicula;
 import Vista.FrameSala;
 
 public class ControladorSala implements ActionListener{
 
 	private FrameSala Frame; //Vista
 	private Sala model;		//Modelo
-	
+	static FramePelicula vist_Peli;
+	static FrameCompra vist_Comp;
 	
 	static DefaultTableModel modelo;
 	
@@ -39,9 +43,15 @@ public class ControladorSala implements ActionListener{
 		}
 		if(boton.getText().equals("Comprar boletas")) {
 			System.out.println("Comprar boletas");
+			
+			vist_Comp  = new FrameCompra();
+			ControladorCompra  ctrl = new ControladorCompra(vist_Comp, model);
 		}
 		if(boton.getText().equals("Peliculas")) {
 			System.out.println("Peliculas");
+			vist_Peli  = new FramePelicula();
+			vist_Peli.setVisible(true);
+			ControladorPelicula  ctrl = new ControladorPelicula(vist_Peli, model);
 		}
 	}
 

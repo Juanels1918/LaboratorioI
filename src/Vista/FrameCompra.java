@@ -1,21 +1,16 @@
 package Vista;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JList;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class FrameCompra extends JFrame {
 
@@ -25,31 +20,16 @@ public class FrameCompra extends JFrame {
 	private JTextField textFieldEdad;
 	private JTextField textFieldDinero;
 	public JButton btnComprar;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FrameCompra frame = new FrameCompra("batman", 10000);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
 	 */
-	public FrameCompra(String pelicula, int precio ){
+	public FrameCompra() {
+		contentPane = new JPanel();
 		setTitle("Comprar boleto");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 350, 402);
-		contentPane = new JPanel();
 		contentPane.setBackground(new Color(72, 209, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -61,7 +41,7 @@ public class FrameCompra extends JFrame {
 		contentPane.add(lblPelicula);
 		
 		JTextField comboBoxPeliculas = new JTextField();
-		comboBoxPeliculas.setText(pelicula);
+		comboBoxPeliculas.setText("");
 		comboBoxPeliculas.setEditable(false);
 		comboBoxPeliculas.setBounds(115, 23, 211, 26);
 		contentPane.add(comboBoxPeliculas);
@@ -72,7 +52,7 @@ public class FrameCompra extends JFrame {
 		contentPane.add(lblPrecio);
 		
 		textFieldPrecio = new JTextField();
-		textFieldPrecio.setText("" + precio);
+		textFieldPrecio.setText("" + 0);
 		textFieldPrecio.setEditable(false);
 		textFieldPrecio.setBounds(115, 92, 211, 22);
 		contentPane.add(textFieldPrecio);
@@ -110,67 +90,55 @@ public class FrameCompra extends JFrame {
 		textFieldDinero.setColumns(10);
 		textFieldDinero.setBounds(115, 272, 211, 25);
 		contentPane.add(textFieldDinero);
-		
-		
+		contentPane.add(btnComprar());
+		this.setVisible(true);
 	}
-	//botón comprar
-	public JButton comprar()
+	
+	public JButton btnComprar()
 	{
 		btnComprar = new JButton("Comprar");
 		btnComprar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnComprar.setBounds(105, 314, 136, 40);
-		contentPane.add(btnComprar);
+		
 		return btnComprar;
-	}
-
-	public JPanel getContentPane() {
-		return contentPane;
-	}
-
-	public void setContentPane(JPanel contentPane) {
-		this.contentPane = contentPane;
 	}
 
 	public JTextField getTextFieldPrecio() {
 		return textFieldPrecio;
 	}
 
-	public void setTextFieldPrecio(JTextField textFieldPrecio) {
-		this.textFieldPrecio = textFieldPrecio;
-	}
-
 	public JTextField getTextFieldNombre() {
 		return textFieldNombre;
-	}
-
-	public void setTextFieldNombre(JTextField textFieldNombre) {
-		this.textFieldNombre = textFieldNombre;
 	}
 
 	public JTextField getTextFieldEdad() {
 		return textFieldEdad;
 	}
 
-	public void setTextFieldEdad(JTextField textFieldEdad) {
-		this.textFieldEdad = textFieldEdad;
-	}
-
 	public JTextField getTextFieldDinero() {
 		return textFieldDinero;
+	}
+
+	public void setTextFieldPrecio(JTextField textFieldPrecio) {
+		this.textFieldPrecio = textFieldPrecio;
+	}
+
+	public void setTextFieldNombre(JTextField textFieldNombre) {
+		this.textFieldNombre = textFieldNombre;
+	}
+
+	public void setTextFieldEdad(JTextField textFieldEdad) {
+		this.textFieldEdad = textFieldEdad;
 	}
 
 	public void setTextFieldDinero(JTextField textFieldDinero) {
 		this.textFieldDinero = textFieldDinero;
 	}
-
-	public JButton getBtnComprar() {
-		return btnComprar;
-	}
-
-	public void setBtnComprar(JButton btnComprar) {
-		this.btnComprar = btnComprar;
-	}
 	
-	//getters and setters
 	
+	// -- -- -- Getters & Setters
+	
+	
+	
+
 }

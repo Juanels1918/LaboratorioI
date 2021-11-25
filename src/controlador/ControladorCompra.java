@@ -6,6 +6,7 @@ import Modelo.Pelicula;
 import Modelo.Sala;
 import Vista.FrameBoleto;
 import Vista.FrameCompra;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -23,7 +24,7 @@ public class ControladorCompra implements ActionListener
 	private Sala sala;
 	
 	//constructor
-	public ControladorCompra(FrameCompra frameCompra, Pelicula pelicula, Sala sala)
+	public ControladorCompra(FrameCompra frameCompra, Sala sala)
 	{
 		this.frameCompra = frameCompra;
 		this.pelicula = pelicula;
@@ -47,47 +48,6 @@ public class ControladorCompra implements ActionListener
 		}else {
 			
 		}
-	}
-
-	//getters and setter
-	public FrameCompra getFrameCompra() {
-		return frameCompra;
-	}
-
-	public void setFrameCompra(FrameCompra frameCompra) {
-		this.frameCompra = frameCompra;
-	}
-
-	public Boleto getBoleto() {
-		return boleto;
-	}
-
-	public void setBoleto(Boleto boleto) {
-		this.boleto = boleto;
-	}
-
-	public Espectador getEspectador() {
-		return espectador;
-	}
-
-	public void setEspectador(Espectador espectador) {
-		this.espectador = espectador;
-	}
-
-	public Pelicula getPelicula() {
-		return pelicula;
-	}
-
-	public void setPelicula(Pelicula pelicula) {
-		this.pelicula = pelicula;
-	}
-
-	public Sala getSala() {
-		return sala;
-	}
-
-	public void setSala(Sala sala) {
-		this.sala = sala;
 	}
 	
 }
