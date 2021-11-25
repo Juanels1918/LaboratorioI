@@ -5,6 +5,8 @@ import Modelo.Sala;
 import Vista.FramePelicula;
 
 import javax.swing.*;
+
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -30,22 +32,37 @@ public class ControladorPelicula implements ActionListener {
 		combo = (JComboBox) e.getSource();
 		
 	    if (objSala.mostrarNombrePeli(0).equals(combo.getSelectedItem())) {
-            FramePelicula.lblTitulo.setText(objSala.mostrarNombrePeli(0));
-            FramePelicula.lblDirector.setText(objSala.mostrarDirector(0));
+            FramePelicula.lblTitulo.setText("Pelicula: "+objSala.mostrarNombrePeli(0));
+            FramePelicula.lblDirector.setText("Director: "+objSala.mostrarDirector(0));
             FramePelicula.lblEdad.setText(String.valueOf(objSala.mostrarEdadMin(0)));
-            FramePelicula.lblDuracion.setText(String.valueOf(objSala.mostrarDuracion(0)));
+            FramePelicula.lblDuracion.setText(String.valueOf("Duración: "+objSala.mostrarDuracion(0)));
+            ImageIcon foto = new ImageIcon(this.getClass().getResource("/imagenes/sm.png"));
+			Image imagen = foto.getImage() ;
+			Image imagen2 = imagen.getScaledInstance(211, 211, Image.SCALE_SMOOTH);
+			foto = new ImageIcon(imagen2);
+			FramePelicula.lblImagen.setIcon(foto);
         }
         if (objSala.mostrarNombrePeli(1).equals(combo.getSelectedItem())) {
-            FramePelicula.lblTitulo.setText(objSala.mostrarNombrePeli(1));
-            FramePelicula.lblDirector.setText(objSala.mostrarDirector(1));
+            FramePelicula.lblTitulo.setText("Pelicula: "+objSala.mostrarNombrePeli(1));
+            FramePelicula.lblDirector.setText("Director: "+objSala.mostrarDirector(1));
             FramePelicula.lblEdad.setText(String.valueOf(objSala.mostrarEdadMin(1)));
-            FramePelicula.lblDuracion.setText(String.valueOf(objSala.mostrarDuracion(1)));
+            FramePelicula.lblDuracion.setText(String.valueOf("Duración: "+objSala.mostrarDuracion(1)));
+            ImageIcon foto = new ImageIcon(this.getClass().getResource("/imagenes/bd.jpg"));
+			Image imagen = foto.getImage() ;
+			Image imagen2 = imagen.getScaledInstance(211, 211, Image.SCALE_SMOOTH);
+			foto = new ImageIcon(imagen2);
+			FramePelicula.lblImagen.setIcon(foto);
         }
         if (objSala.mostrarNombrePeli(2).equals(combo.getSelectedItem())) {
-            FramePelicula.lblTitulo.setText(objSala.mostrarNombrePeli(2));
-            FramePelicula.lblDirector.setText(objSala.mostrarDirector(2));
+            FramePelicula.lblTitulo.setText("Pelicula: "+objSala.mostrarNombrePeli(2));
+            FramePelicula.lblDirector.setText("Director: "+objSala.mostrarDirector(2));
             FramePelicula.lblEdad.setText(String.valueOf(objSala.mostrarEdadMin(2)));
-            FramePelicula.lblDuracion.setText(String.valueOf(objSala.mostrarDuracion(2)));
+            FramePelicula.lblDuracion.setText(String.valueOf("Duración: "+objSala.mostrarDuracion(2)));
+            ImageIcon foto = new ImageIcon(this.getClass().getResource("/imagenes/ps.jpg"));
+			Image imagen = foto.getImage() ;
+			Image imagen2 = imagen.getScaledInstance(211, 211, Image.SCALE_SMOOTH);
+			foto = new ImageIcon(imagen2);
+			FramePelicula.lblImagen.setIcon(foto);
         }
 	}
 

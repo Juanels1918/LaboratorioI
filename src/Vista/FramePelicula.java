@@ -14,10 +14,6 @@ public class FramePelicula extends JFrame {
 	private JPanel contentPane;
 	public JComboBox comboBoxPeliculas;
 
-	public static void setLblImagen(JLabel lblImagen) {
-		FramePelicula.lblImagen = lblImagen;
-	}
-
 	public static void setLblTitulo(String titulo) {
 		lblTitulo.setText(titulo);
 	}
@@ -45,10 +41,10 @@ public class FramePelicula extends JFrame {
 	 */
 	public FramePelicula() {
 		setTitle("Peliculas");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 316);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(102, 205, 170));
+		contentPane.setBackground(new Color(32, 178, 170));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -58,20 +54,21 @@ public class FramePelicula extends JFrame {
 		contentPane.add(comboBoxPeliculas);
 
 		JLabel lblPelicula = new JLabel("Pelicula:");
-		lblPelicula.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblPelicula.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblPelicula.setBounds(10, 11, 112, 26);
 		contentPane.add(lblPelicula);
 		
-		lblImagen = new JLabel("Imagen");
+		lblImagen = new JLabel();
 		lblImagen.setBounds(10, 52, 211, 211);
-
+		contentPane.add(lblImagen);
+		
 		lblTitulo = new JLabel("Titulo");
-		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblTitulo.setBounds(247, 52, 120, 26);
+		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblTitulo.setBounds(247, 57, 120, 26);
 		contentPane.add(lblTitulo);
 
 		lblDirector = new JLabel("Director");
-		lblDirector.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblDirector.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblDirector.setBounds(247, 94, 120, 26);
 		contentPane.add(lblDirector);
 		
@@ -79,13 +76,17 @@ public class FramePelicula extends JFrame {
 		lblEdad.setForeground(new Color(0, 0, 0));
 		lblEdad.setBackground(new Color(255, 255, 255));
 		lblEdad.setFont(new Font("Impact", Font.PLAIN, 37));
-		lblEdad.setBounds(257, 181, 74, 66);
+		lblEdad.setBounds(257, 186, 74, 66);
 		contentPane.add(lblEdad);
 		
 		lblDuracion = new JLabel(String.valueOf(0));
-		lblDuracion.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblDuracion.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblDuracion.setBounds(247, 141, 120, 26);
 		contentPane.add(lblDuracion);
+		
+		JLabel lblNewLabel = new JLabel("Edad:");
+		lblNewLabel.setBounds(244, 178, 49, 14);
+		contentPane.add(lblNewLabel);
 
 	}
 }
