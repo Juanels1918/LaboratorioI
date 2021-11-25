@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import controlador.ControladorCompra;
+
 public class FrameCompra extends JFrame {
 
 	private JPanel contentPane;
@@ -28,7 +30,7 @@ public class FrameCompra extends JFrame {
 	public FrameCompra() {
 		contentPane = new JPanel();
 		setTitle("Comprar boleto");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 350, 402);
 		contentPane.setBackground(new Color(72, 209, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -27,8 +27,8 @@ public class ControladorCompra implements ActionListener
 	public ControladorCompra(FrameCompra frameCompra, Sala sala)
 	{
 		this.frameCompra = frameCompra;
-		this.pelicula = pelicula;
 		this.sala = sala;
+		this.frameCompra.btnComprar.addActionListener(this);
 	}
 
 	@Override
@@ -43,6 +43,7 @@ public class ControladorCompra implements ActionListener
 			//creo espectador
 			espectador = new Espectador(frameCompra.getTextFieldNombre().getText(), edad, dinero);
 			sala.comprarBoleta();
+			boleto = sala.getB();
 			FrameBoleto frame = new FrameBoleto(edad, dinero, pelicula.getNombre(), frameCompra.getTextFieldNombre().getText(), boleto.getAsiento());
 			frame.setVisible(true);
 		}else {

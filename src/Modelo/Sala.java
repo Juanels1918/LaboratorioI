@@ -8,14 +8,16 @@ public class Sala {
     private ArrayList<String> asientos = new ArrayList<>();
     private ArrayList<Pelicula> peliculas = new ArrayList<>();
     private int hora = 11;
-
+    private Boleto B;
     Pelicula P;
+    private String peliculaActual;
 
     public Sala (){
         hora = 11;
         rellenarAsientos();
         agregarPelicula();
         mostrarAsientos();
+        peliculaActual = peliculas.get(0).getNombre();
     }
 
     //Genera la cantidad de asientos
@@ -82,7 +84,7 @@ public class Sala {
     private int idBoleta = 1;
     public void comprarBoleta (){
         int aux = (int) Math.floor(Math.random()*(16 - 1 + 1) + 1);
-        Boleto B = new Boleto(idBoleta, peliculas.get(0).getNombre(), asientos.get(aux));
+        B = new Boleto(idBoleta, peliculas.get(0).getNombre(), asientos.get(aux));
         idBoleta++;
         B.mostrar();
     }
@@ -94,7 +96,12 @@ public class Sala {
 	}
 
 	public void setHora(int hora) {
-		this.hora += hora;
+		if (this.hora<22) {
+			this.hora += hora;
+		}else {
+			this.hora=11;
+		}
+		
 	}
 
 	public ArrayList<String> getAsientos() {
@@ -103,6 +110,23 @@ public class Sala {
 
 	public void setAsientos(ArrayList<String> asientos) {
 		this.asientos = asientos;
+	}
+
+	public Boleto getB() {
+		return B;
+	}
+
+	public void setB(Boleto b) {
+		B = b;
+	}
+
+	public String getPeliculaActual() {
+		return peliculaActual;
+	}
+
+	public void setPeliculaActual(int num) {
+		this.peliculaActual = peliculas.get(num).getNombre();
+		System.out.println("" + this.peliculaActual);
 	}
 	
 	

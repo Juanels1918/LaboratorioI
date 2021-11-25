@@ -38,8 +38,10 @@ public class ControladorSala implements ActionListener{
 		JButton boton;
 		boton = (JButton) e.getSource();
 		if(boton.getText().equals("Avanzar hora")) {
-			model.setHora(3);
+			model.setHora(2);
+			model.setPeliculaActual((int) Math.floor(Math.random()*(3 - 1 + 1) + 0));
 			Frame.setHora(model.getHora());
+			
 		}
 		if(boton.getText().equals("Comprar boletas")) {
 			System.out.println("Comprar boletas");
