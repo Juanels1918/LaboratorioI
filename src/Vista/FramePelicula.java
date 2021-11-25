@@ -43,22 +43,6 @@ public class FramePelicula extends JFrame {
 	public static JLabel lblEdad;
 	public static JLabel lblDuracion;
 
-	Sala objSala = new Sala();
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(() -> {
-			try {
-				FramePelicula frame = new FramePelicula();
-				frame.setVisible(true);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		});
-	}
-
 	/**
 	 * Create the frame.
 	 */
@@ -73,9 +57,6 @@ public class FramePelicula extends JFrame {
 		contentPane.setLayout(null);
 
 		comboBoxPeliculas = new JComboBox();
-		comboBoxPeliculas.addItem(objSala.mostrarNombrePeli(0));
-		comboBoxPeliculas.addItem(objSala.mostrarNombrePeli(1));
-		comboBoxPeliculas.addItem(objSala.mostrarNombrePeli(2));
 		comboBoxPeliculas.setBounds(112, 15, 314, 26);
 		contentPane.add(comboBoxPeliculas);
 
@@ -110,25 +91,5 @@ public class FramePelicula extends JFrame {
 		lblDuracion.setBounds(247, 141, 120, 26);
 		contentPane.add(lblDuracion);
 
-		/*String itemSeleecionado = (String)cv.getSelectedItem();
-        if (objSala.mostrarNombrePeli(0).equals(itemSeleecionado)) {
-            FramePelicula.setLblTitulo(objSala.mostrarNombrePeli(0));
-            FramePelicula.lblDirector.setText(objSala.mostrarDirector(0));
-            FramePelicula.lblEdad.setText(String.valueOf(objSala.mostrarEdadMin(0)));
-            FramePelicula.lblDuracion.setText(String.valueOf(objSala.mostrarDuracion(0)));
-        }
-        if (objSala.mostrarNombrePeli(1).equals(itemSeleecionado)) {
-            FramePelicula.lblTitulo.setText(objSala.mostrarNombrePeli(1));
-            FramePelicula.lblDirector.setText(objSala.mostrarDirector(1));
-            FramePelicula.lblEdad.setText(String.valueOf(objSala.mostrarEdadMin(1)));
-            FramePelicula.lblDuracion.setText(String.valueOf(objSala.mostrarDuracion(1)));
-        }
-        if (objSala.mostrarNombrePeli(2).equals(itemSeleecionado)) {
-            FramePelicula.lblTitulo.setText(objSala.mostrarNombrePeli(2));
-            FramePelicula.lblDirector.setText(objSala.mostrarDirector(2));
-            FramePelicula.lblEdad.setText(String.valueOf(objSala.mostrarEdadMin(2)));
-            FramePelicula.lblDuracion.setText(String.valueOf(objSala.mostrarDuracion(2)));
-        }
-        */
 	}
 }
