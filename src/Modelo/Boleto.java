@@ -8,11 +8,15 @@ public class Boleto {
     private String nombrePelicula;
     private String asiento;
 
-    public Boleto(String nombre, String x){
-        this.id = (int) Math.floor(Math.random()*(999 - 100 + 1) + 100);
+    public Boleto(int id, String nombre, String x){
+        this.id = id;
         this.precio = 10000;
         this.nombrePelicula = nombre;
         this.asiento = x;
+    }
+
+    public void mostrar (){
+        System.out.println(this.id + " " + this.precio + " " + this.nombrePelicula + " " + this.asiento);
     }
 
 }

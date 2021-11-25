@@ -12,6 +12,7 @@ public class Launcher {
 		vist_P = new FrameSala();
 
 		Sala sala1 = new Sala();
+		sala1.comprarBoleta();
 
 	}
 }

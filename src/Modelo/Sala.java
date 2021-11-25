@@ -60,7 +60,11 @@ public class Sala {
         hora += 1;
     }
 
-    /*public void comprarBoleta (){
-        Boleto B = new Boleto(peliculas.get(0).getNombre(), asientos);
-    }*/
+    private int idBoleta = 1;
+    public void comprarBoleta (){
+        int aux = (int) Math.floor(Math.random()*(16 - 1 + 1) + 1);
+        Boleto B = new Boleto(idBoleta, peliculas.get(0).getNombre(), asientos.get(aux));
+        idBoleta++;
+        B.mostrar();
+    }
 }
