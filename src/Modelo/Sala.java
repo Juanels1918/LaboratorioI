@@ -2,11 +2,14 @@ package Modelo;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Sala {
 
     //Atributos
     private ArrayList<String> asientos = new ArrayList<>();
     private ArrayList<Pelicula> peliculas = new ArrayList<>();
+    private int asiOcupados;
     private int hora = 11;
     private Boleto B;
     Pelicula P;
@@ -16,7 +19,6 @@ public class Sala {
         hora = 11;
         rellenarAsientos();
         agregarPelicula();
-        mostrarAsientos();
         peliculaActual = peliculas.get(0).getNombre();
     }
 
@@ -37,7 +39,7 @@ public class Sala {
         }
     }
 
-    //Muestra los asientos
+    /*/Muestra los asientos
     public void mostrarAsientos (){
         int aux = 15;
         for (int i = 0; i < 4; i++){
@@ -47,13 +49,13 @@ public class Sala {
             }
             System.out.println();
         }
-    }
+    }*/
 
     //Genera las peliculas que se van a mostrar
     public void agregarPelicula (){
-        peliculas.add(0, P = new Pelicula("Spider-Man 2", "Sam Raimi", 7, 127, 10000));
+        peliculas.add(0, P = new Pelicula("Spider-Man 2", "Sam Raimi", 7, 127, 15000));
         peliculas.add(1, P = new Pelicula("Baby Driver", "Edgar Wright", 16, 115, 10000));
-        peliculas.add(2, P = new Pelicula("Parasite", "Bong Joon-ho", 16, 132, 10000));
+        peliculas.add(2, P = new Pelicula("Parasite", "Bong Joon-ho", 16, 132, 13000));
     }
 
     public String mostrarNombrePeli (int index){
@@ -82,11 +84,28 @@ public class Sala {
     }
 
     private int idBoleta = 1;
-    public void comprarBoleta (){
-        int aux = (int) Math.floor(Math.random()*(16 - 1 + 1) + 1);
-        B = new Boleto(idBoleta, peliculas.get(0).getNombre(), asientos.get(aux));
-        idBoleta++;
-        B.mostrar();
+    
+    public Boleto comprarBoleta (){
+    	boolean s = false;
+    	if(asiOcupados>15) {
+    		JOptionPane.showMessageDialog(null, "Ya no hay asientos libres");
+    	}
+    	else {
+    		while (s == false) {
+       		 int aux = (int) Math.floor(Math.random()*(16 - 1 + 1) + 0);
+       	        if (asientos.get(aux).equals("X")) {
+       	        	s = false;
+       			} else {
+       				B = new Boleto(idBoleta, peliculas.get(0).getNombre(), asientos.get(aux));
+       	            idBoleta++;
+       	            asiOcupados++;
+       	            asientos.remove(aux);
+       	            asientos.add(aux, "X");
+       	            s = true;
+       			}
+    		}
+    	}
+        return B;
     }
 
     // --- -- -- -- Getters & Setters
@@ -101,8 +120,8 @@ public class Sala {
 			this.hora += hora;
 		}else {
 			this.hora=11;
+			JOptionPane.showMessageDialog(null, "Cierre de sala");
 		}
-		System.out.println("asas");
 	}
 
 	public ArrayList<String> getAsientos() {
@@ -127,8 +146,26 @@ public class Sala {
 
 	public void setPeliculaActual(int num) {
 		this.peliculaActual = peliculas.get(num).getNombre();
-		System.out.println("" + this.peliculaActual);
 	}
+
+	public String getIdBoleta() {
+		return Integer.toString(idBoleta);
+	}
+
+	public void setIdBoleta(int idBoleta) {
+		this.idBoleta = idBoleta;
+	}
+
+	public int getAsiOcupados() {
+		return asiOcupados;
+	}
+
+	public void setAsiOcupados(int asiOcupados) {
+		this.asiOcupados = asiOcupados;
+	}
+	
+	
+	
 	
 	
     

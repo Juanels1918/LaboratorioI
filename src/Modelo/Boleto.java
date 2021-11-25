@@ -16,12 +16,8 @@ public class Boleto {
         this.asiento = x;
     }
 
-    public void mostrar (){
-        System.out.println(this.id + " " + this.precio + " " + this.nombrePelicula + " " + this.asiento);
-    }
-
-	public int getId() {
-		return id;
+	public String getId() {
+		return Integer.toString(id);
 	}
 
 	public void setId(int id) {

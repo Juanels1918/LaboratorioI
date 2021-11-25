@@ -16,8 +16,8 @@ import Vista.FrameSala;
 
 public class ControladorSala implements ActionListener{
 
-	private FrameSala Frame; //Vista
-	private Sala model;		//Modelo
+	static private FrameSala Frame; //Vista
+	static private Sala model;		//Modelo
 	static FramePelicula vist_Peli;
 	static FrameCompra vist_Comp;
 	
@@ -30,7 +30,8 @@ public class ControladorSala implements ActionListener{
 		this.Frame.btnavanzarHora.addActionListener(this);
 		this.Frame.btncompBoletas.addActionListener(this);
 		this.Frame.btnpeliculas.addActionListener(this);
-		this.Frame.table.setModel(modeloTabla(this.model.getAsientos()));
+		actualizarPeliculaActual();
+		actualizarTabla();
 	}
 
 	@Override
@@ -41,16 +42,16 @@ public class ControladorSala implements ActionListener{
 			model.setHora(2);
 			model.setPeliculaActual((int) Math.floor(Math.random()*(3 - 1 + 1) + 0));
 			Frame.setHora(model.getHora());
-			System.out.println("asas");
+			model.setAsiOcupados(0);
+			model.rellenarAsientos();
+			actualizarPeliculaActual();
+			actualizarTabla();
 		}
 		if(boton.getText().equals("Comprar boletas")) {
-			System.out.println("Comprar boletas");
-			
 			vist_Comp  = new FrameCompra();
 			ControladorCompra  ctrl = new ControladorCompra(vist_Comp, model);
 		}
 		if(boton.getText().equals("Peliculas")) {
-			System.out.println("Peliculas");
 			vist_Peli  = new FramePelicula();
 			vist_Peli.setVisible(true);
 			ControladorPelicula  ctrl = new ControladorPelicula(vist_Peli, model);
@@ -58,7 +59,6 @@ public class ControladorSala implements ActionListener{
 	}
 
 	 public static DefaultTableModel modeloTabla(ArrayList<String> asientos){
-		 
 			modelo = new DefaultTableModel();
 	        for(int i=0; i<4; i++) { modelo.addColumn(i);}
 	        int i=15;
@@ -71,6 +71,13 @@ public class ControladorSala implements ActionListener{
 	        	modelo.addRow(tit);
 			}
 	        return modelo;
-	        
 	    }
+	 
+	 public static void actualizarTabla() {
+		 Frame.table.setModel(modeloTabla(model.getAsientos()));
+	}
+	 
+	 public static void actualizarPeliculaActual() {
+		 Frame.setTfdPelicula(model.getPeliculaActual());
+	}
 }

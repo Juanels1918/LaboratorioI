@@ -14,33 +14,15 @@ public class FrameBoleto extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					//temporal
-					FrameBoleto frame = new FrameBoleto(2, 10000, "betman", "laura", "1A");
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	 * Launch the application.
-	 */
-	
-	
 	
 	/**
 	 * Create the frame.
 	 */
-	public FrameBoleto(int id, int precio, String pelicula, String nombre, String asiento) 
+	
+	public FrameBoleto(String id, String precio, String pelicula, String nombre, String asiento) 
 	{
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 402, 161);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(245, 222, 179));

@@ -17,7 +17,6 @@ public class FrameSala extends JFrame {
 	
 	static JPanel panel1;
     static JTextField tfdPelicula;
-    private JTextField tfdSiguiente;
     private JTextField Pantalla;
     
     //Botones
@@ -32,7 +31,7 @@ public class FrameSala extends JFrame {
     	panel1 = new JPanel(); 
     	panel1.setBackground(new Color(102, 205, 170));
     	setContentPane(panel1);
-        setSize(432, 360);
+        setSize(432, 294);
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("El mejor cine do mundhino :3");
@@ -43,11 +42,9 @@ public class FrameSala extends JFrame {
         panel1.add(avanzarHora());
         panel1.add(compBoletas());
         panel1.add(peliculas());
-        
-        panel1.add(sgtPel());
         panel1.add(pel_Edad());
         
-        panel1.add(campo());
+        panel1.add(tfdPelicula());
         panel1.add(hora());
         
         JLabel LImagen = new JLabel();
@@ -59,17 +56,12 @@ public class FrameSala extends JFrame {
 		LImagen.setBounds(0, 0, 428, 83);
 		panel1.add(LImagen);
         panel1.add(table());
-        
-        tfdSiguiente = new JTextField();
-        tfdSiguiente.setBounds(170, 120, 235, 20);
-        panel1.add(tfdSiguiente);
-        tfdSiguiente.setColumns(10);
         {
         	Pantalla = new JTextField();
         	Pantalla.setEditable(false);
         	Pantalla.setHorizontalAlignment(SwingConstants.CENTER);
         	Pantalla.setText("Pantalla");
-        	Pantalla.setBounds(195, 282, 199, 20);
+        	Pantalla.setBounds(195, 232, 199, 20);
         	panel1.add(Pantalla);
         	Pantalla.setColumns(10);
         }
@@ -77,34 +69,19 @@ public class FrameSala extends JFrame {
         this.setVisible(true);
     }
     
-    public JTextField campo() {
-    	tfdPelicula = new JTextField();
-    	tfdPelicula.setEditable(false);
-    	tfdPelicula.setBounds(170, 93, 235, 20);
-         tfdPelicula.setColumns(10);
-         return tfdPelicula;
-	}
-    
  // -- -- -- JLABEL  
     
     public JLabel hora() {
     	hora = new JLabel("11:00");
     	hora.setHorizontalAlignment(SwingConstants.CENTER);
     	hora.setFont(new Font("Consolas", Font.BOLD, 40));
-    	hora.setBounds(206, 166, 172, 47);
+    	hora.setBounds(209, 127, 172, 47);
     	return hora;
 	}
     
 		    public void setHora(int h) {
 		    	hora.setText(h+":00");
 			}
-    
-    public JLabel sgtPel() {
-    	 JLabel sgtPel = new JLabel("Siguiente pelicula: ");
-         sgtPel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-         sgtPel.setBounds(20, 121, 140, 19);
-        return sgtPel;
-	}
     
     public JLabel pel_Edad() {
     	JLabel pel_Edad = new JLabel("Pelicula Actual:");
@@ -117,19 +94,19 @@ public class FrameSala extends JFrame {
     
     public JButton avanzarHora() {
     	btnavanzarHora = new JButton("Avanzar hora");
-        btnavanzarHora.setBounds(20, 188, 147, 33);
+        btnavanzarHora.setBounds(20, 127, 147, 33);
         return btnavanzarHora;
 	}
     
     
 	public JButton compBoletas() {
 		btncompBoletas = new JButton("Comprar boletas");
-		btncompBoletas.setBounds(20, 232, 147, 33);
+		btncompBoletas.setBounds(20, 171, 147, 33);
 		return btncompBoletas;
 		}
 	public JButton peliculas() {
 		btnpeliculas = new JButton("Peliculas");
-		btnpeliculas.setBounds(20, 276, 147, 33);
+		btnpeliculas.setBounds(20, 215, 147, 33);
 		return btnpeliculas;
 	}
 
@@ -139,8 +116,24 @@ public class FrameSala extends JFrame {
         table = new JTable();
          table.setColumnSelectionAllowed(true);
          table.setCellSelectionEnabled(true);
-         table.setBounds(195, 215, 199, 64);
+         table.setBounds(195, 167, 199, 64);
          return table;
 	}
+    
+	// -- -- -- JTEXTFIELD
+    
+    public JTextField tfdPelicula() {
+    	tfdPelicula = new JTextField();
+    	tfdPelicula.setEditable(false);
+    	tfdPelicula.setBounds(170, 93, 235, 20);
+         tfdPelicula.setColumns(10);
+         return tfdPelicula;
+	}
+
+			public static void setTfdPelicula(String nomPel) {
+				tfdPelicula.setText(nomPel);
+			}
+    		
+    	
     
 }
