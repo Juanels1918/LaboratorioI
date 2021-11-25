@@ -35,10 +35,10 @@ public class ControladorPelicula implements ActionListener {
             FramePelicula.lblTitulo.setText("Pelicula: "+objSala.mostrarNombrePeli(0));
             FramePelicula.lblDirector.setText("Director: "+objSala.mostrarDirector(0));
             FramePelicula.lblEdad.setText(String.valueOf(objSala.mostrarEdadMin(0)));
-            FramePelicula.lblDuracion.setText(String.valueOf("Duración: "+objSala.mostrarDuracion(0)));
+            FramePelicula.lblDuracion.setText(String.valueOf("Duracion: "+objSala.mostrarDuracion(0)) + " min");
             ImageIcon foto = new ImageIcon(this.getClass().getResource("/imagenes/sm.png"));
 			Image imagen = foto.getImage() ;
-			Image imagen2 = imagen.getScaledInstance(211, 211, Image.SCALE_SMOOTH);
+			Image imagen2 = imagen.getScaledInstance(211, 300, Image.SCALE_SMOOTH);
 			foto = new ImageIcon(imagen2);
 			FramePelicula.lblImagen.setIcon(foto);
         }
@@ -46,10 +46,10 @@ public class ControladorPelicula implements ActionListener {
             FramePelicula.lblTitulo.setText("Pelicula: "+objSala.mostrarNombrePeli(1));
             FramePelicula.lblDirector.setText("Director: "+objSala.mostrarDirector(1));
             FramePelicula.lblEdad.setText(String.valueOf(objSala.mostrarEdadMin(1)));
-            FramePelicula.lblDuracion.setText(String.valueOf("Duración: "+objSala.mostrarDuracion(1)));
+            FramePelicula.lblDuracion.setText(String.valueOf("Duracion: "+objSala.mostrarDuracion(1)) + " min");
             ImageIcon foto = new ImageIcon(this.getClass().getResource("/imagenes/bd.jpg"));
 			Image imagen = foto.getImage() ;
-			Image imagen2 = imagen.getScaledInstance(211, 211, Image.SCALE_SMOOTH);
+			Image imagen2 = imagen.getScaledInstance(211, 300, Image.SCALE_SMOOTH);
 			foto = new ImageIcon(imagen2);
 			FramePelicula.lblImagen.setIcon(foto);
         }
@@ -57,10 +57,10 @@ public class ControladorPelicula implements ActionListener {
             FramePelicula.lblTitulo.setText("Pelicula: "+objSala.mostrarNombrePeli(2));
             FramePelicula.lblDirector.setText("Director: "+objSala.mostrarDirector(2));
             FramePelicula.lblEdad.setText(String.valueOf(objSala.mostrarEdadMin(2)));
-            FramePelicula.lblDuracion.setText(String.valueOf("Duración: "+objSala.mostrarDuracion(2)));
+            FramePelicula.lblDuracion.setText(String.valueOf("Duracion: "+objSala.mostrarDuracion(2)) + " min");
             ImageIcon foto = new ImageIcon(this.getClass().getResource("/imagenes/ps.jpg"));
 			Image imagen = foto.getImage() ;
-			Image imagen2 = imagen.getScaledInstance(211, 211, Image.SCALE_SMOOTH);
+			Image imagen2 = imagen.getScaledInstance(211, 300, Image.SCALE_SMOOTH);
 			foto = new ImageIcon(imagen2);
 			FramePelicula.lblImagen.setIcon(foto);
         }

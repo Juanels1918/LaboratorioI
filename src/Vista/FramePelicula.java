@@ -42,7 +42,7 @@ public class FramePelicula extends JFrame {
 	public FramePelicula() {
 		setTitle("Peliculas");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 316);
+		setBounds(100, 100, 450, 416);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(32, 178, 170));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -59,7 +59,7 @@ public class FramePelicula extends JFrame {
 		contentPane.add(lblPelicula);
 		
 		lblImagen = new JLabel();
-		lblImagen.setBounds(10, 52, 211, 211);
+		lblImagen.setBounds(10, 52, 211, 300);
 		contentPane.add(lblImagen);
 		
 		lblTitulo = new JLabel("Titulo");
@@ -69,7 +69,7 @@ public class FramePelicula extends JFrame {
 
 		lblDirector = new JLabel("Director");
 		lblDirector.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblDirector.setBounds(247, 94, 120, 26);
+		lblDirector.setBounds(247, 94, 150, 26);
 		contentPane.add(lblDirector);
 		
 		lblEdad = new JLabel(String.valueOf(0));
@@ -81,11 +81,12 @@ public class FramePelicula extends JFrame {
 		
 		lblDuracion = new JLabel(String.valueOf(0));
 		lblDuracion.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblDuracion.setBounds(247, 141, 120, 26);
+		lblDuracion.setBounds(247, 141, 150, 26);
 		contentPane.add(lblDuracion);
 		
-		JLabel lblNewLabel = new JLabel("Edad:");
-		lblNewLabel.setBounds(244, 178, 49, 14);
+		JLabel lblNewLabel = new JLabel("Edad min:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel.setBounds(244, 178, 150, 14);
 		contentPane.add(lblNewLabel);
 
 	}
