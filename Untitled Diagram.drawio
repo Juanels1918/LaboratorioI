@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-12-02T19:12:01.150Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="o6a86tDsWswkWP1adoIp" version="15.8.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-12-02T19:18:45.549Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="3D8fFT2PbvQ788yR3DJe" version="15.8.9" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1038" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="782" dy="479" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -118,11 +118,19 @@
             <mxPoint x="-38" y="40" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="EULMfDLf5o7HFFcWnPI--0" value="&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span style=&quot;line-height: 1.2&quot;&gt;Abstracción: actores del escenario&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span style=&quot;line-height: 1.2&quot;&gt;- Lombriz&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;- Mapa&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;- Fruta&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;- Marcador&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;- Vidas&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;-&amp;nbsp;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="c4wN8oiGTN2MCxyvZSJ--0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="EULMfDLf5o7HFFcWnPI--0" target="c4wN8oiGTN2MCxyvZSJ--1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="591" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EULMfDLf5o7HFFcWnPI--0" value="&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span style=&quot;line-height: 1.2&quot;&gt;Abstracción: actores del escenario&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span style=&quot;line-height: 1.2&quot;&gt;- Lombriz&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;- Mapa&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;- Fruta&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;- Marcador&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;- Vidas&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;- Gallinas&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="70" y="520" width="216" height="142" as="geometry" />
         </mxCell>
-        <mxCell id="v7E6TvlbOx2IiRd9SQNV-0" value="gallinas" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="v7E6TvlbOx2IiRd9SQNV-0" value="gallinas" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="508" y="480" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c4wN8oiGTN2MCxyvZSJ--1" value="Lombriz:&amp;nbsp;&lt;br&gt;- Largo&lt;br&gt;&lt;div&gt;&lt;span&gt;-&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="352" y="536" width="156" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
